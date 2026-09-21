@@ -1,0 +1,552 @@
+:root {
+  --rev-navy: #0b4054;
+  --rev-green: #8fc439;
+  --rev-blue: #1296d2;
+  --rev-light-green: #d2e8ba;
+  --rev-white: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ==========================================
+   NAVBAR SHELL
+========================================== */
+
+.navbar {
+  position: fixed;
+  z-index: 1000;
+
+  top: 20px;
+  left: 5%;
+
+  width: 315px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border:
+    1px solid rgba(11, 64, 84, 0.07);
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 12px 35px rgba(11, 64, 84, 0.07);
+
+  transition:
+    top 0.35s ease,
+    width 0.35s ease,
+    border-radius 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+/* ==========================================
+   SCROLLED
+========================================== */
+
+.navbar-scrolled {
+  top: 14px;
+
+  width: 295px;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  box-shadow:
+    0 12px 38px rgba(11, 64, 84, 0.09);
+}
+
+/* When open, give menu slightly more room */
+
+.navbar-open {
+  width: 355px;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 24px 70px rgba(11, 64, 84, 0.14);
+}
+
+.navbar-scrolled.navbar-open {
+  width: 355px;
+}
+
+/* ==========================================
+   TOP BAR
+========================================== */
+
+.navbar-top {
+  position: relative;
+  z-index: 2;
+
+  height: 68px;
+
+  box-sizing: border-box;
+
+  padding: 8px 10px 8px 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.navbar-logo {
+  display: inline-flex;
+  align-items: center;
+
+  text-decoration: none;
+}
+
+.navbar-logo img {
+  display: block;
+
+  width: 158px;
+  height: auto;
+
+  transition:
+    width 0.35s ease,
+    transform 0.3s ease;
+}
+
+.navbar-logo:hover img {
+  transform: translateY(-1px);
+}
+
+.navbar-scrolled:not(.navbar-open)
+.navbar-logo img {
+  width: 145px;
+}
+
+/* ==========================================
+   MENU BUTTON
+========================================== */
+
+.menu-button {
+  position: relative;
+
+  width: 44px;
+  height: 44px;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.menu-button:hover {
+  transform: scale(1.06);
+}
+
+/* ==========================================
+   DOTS
+========================================== */
+
+.menu-button span {
+  position: absolute;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: var(--rev-navy);
+
+  transition:
+    width 0.3s ease,
+    height 0.3s ease,
+    transform 0.35s ease,
+    opacity 0.2s ease,
+    background 0.25s ease,
+    border-radius 0.3s ease;
+}
+
+.menu-button span:nth-child(1) {
+  transform: translateX(-8px);
+}
+
+.menu-button span:nth-child(2) {
+  transform: translateX(0);
+}
+
+.menu-button span:nth-child(3) {
+  transform: translateX(8px);
+}
+
+.menu-button:hover span {
+  background: var(--rev-green);
+}
+
+/* ==========================================
+   X
+========================================== */
+
+.menu-button.active span {
+  width: 20px;
+  height: 2px;
+
+  border-radius: 10px;
+
+  background: var(--rev-navy);
+}
+
+.menu-button.active span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.menu-button.active span:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.menu-button.active span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.menu-button.active:hover span {
+  background: var(--rev-green);
+}
+
+/* ==========================================
+   EXPANDING MENU
+========================================== */
+
+.menu-panel {
+  position: relative;
+
+  max-height: 0;
+
+  padding: 0 20px;
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  transform: translateY(-8px);
+
+  pointer-events: none;
+
+  transition:
+    max-height 0.6s
+      cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease,
+    transform 0.45s
+      cubic-bezier(0.22, 1, 0.36, 1),
+    padding 0.45s ease;
+}
+
+.menu-panel.open {
+  max-height: 620px;
+
+  padding:
+    0 20px 22px;
+
+  opacity: 1;
+
+  transform: translateY(0);
+
+  pointer-events: auto;
+}
+
+/* ==========================================
+   DIVIDER
+========================================== */
+
+.menu-divider {
+  width: 100%;
+  height: 1px;
+
+  margin-bottom: 22px;
+
+  background:
+    rgba(11, 64, 84, 0.09);
+}
+
+/* ==========================================
+   MENU LABEL
+========================================== */
+
+.menu-label {
+  margin:
+    0 0 14px;
+
+  color: var(--rev-blue);
+
+  font-size: 7px;
+  font-weight: 850;
+  letter-spacing: 2.7px;
+}
+
+/* ==========================================
+   LINKS
+========================================== */
+
+.menu-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-links a {
+  position: relative;
+
+  min-height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom:
+    1px solid rgba(11, 64, 84, 0.075);
+
+  color: var(--rev-navy);
+
+  text-decoration: none;
+
+  transition:
+    padding 0.3s ease,
+    color 0.25s ease,
+    background 0.3s ease;
+}
+
+.menu-links a:first-child {
+  border-top:
+    1px solid rgba(11, 64, 84, 0.075);
+}
+
+.menu-links a span {
+  font-size: 20px;
+  font-weight: 620;
+
+  line-height: 1;
+
+  letter-spacing: -0.035em;
+}
+
+.menu-links a small {
+  color:
+    rgba(11, 64, 84, 0.3);
+
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+
+  transition:
+    color 0.25s ease,
+    transform 0.3s ease;
+}
+
+.menu-links a:hover {
+  padding-left: 9px;
+  padding-right: 7px;
+
+  color: var(--rev-green);
+
+  background:
+    rgba(143, 196, 57, 0.055);
+}
+
+.menu-links a:hover small {
+  color: var(--rev-blue);
+
+  transform:
+    translateX(-3px);
+}
+
+/* ==========================================
+   MENU BOTTOM
+========================================== */
+
+.menu-bottom {
+  margin-top: 20px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.menu-bottom > div {
+  display: flex;
+  flex-direction: column;
+
+  color:
+    rgba(11, 64, 84, 0.38);
+
+  font-size: 7px;
+  font-weight: 800;
+  line-height: 1.65;
+  letter-spacing: 1.7px;
+}
+
+.menu-bottom strong {
+  color: var(--rev-green);
+  font-weight: 800;
+}
+
+.menu-mark {
+  width: 37px;
+  height: 37px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--rev-navy);
+
+  color: var(--rev-green);
+
+  font-size: 13px;
+  font-weight: 850;
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 650px) {
+
+  .navbar {
+    top: 12px;
+    left: 14px;
+
+    width: 265px;
+
+    border-radius: 18px;
+  }
+
+  .navbar-scrolled {
+    top: 9px;
+
+    width: 250px;
+  }
+
+  .navbar-open,
+  .navbar-scrolled.navbar-open {
+    width:
+      min(
+        340px,
+        calc(100vw - 28px)
+      );
+
+    border-radius: 21px;
+  }
+
+  .navbar-top {
+    height: 60px;
+
+    padding:
+      7px 8px
+      7px 14px;
+  }
+
+  .navbar-logo img {
+    width: 137px;
+  }
+
+  .navbar-scrolled:not(.navbar-open)
+  .navbar-logo img {
+    width: 126px;
+  }
+
+  .menu-button {
+    width: 42px;
+    height: 42px;
+  }
+
+  .menu-panel {
+    padding:
+      0 17px;
+  }
+
+  .menu-panel.open {
+    padding:
+      0 17px 18px;
+  }
+
+  .menu-divider {
+    margin-bottom: 18px;
+  }
+
+  .menu-links a {
+    min-height: 47px;
+  }
+
+  .menu-links a span {
+    font-size: 18px;
+  }
+
+  .menu-bottom {
+    margin-top: 17px;
+  }
+}
+
+/* ==========================================
+   VERY SMALL MOBILE
+========================================== */
+
+@media (max-width: 370px) {
+
+  .navbar {
+    width: 240px;
+  }
+
+  .navbar-scrolled {
+    width: 230px;
+  }
+
+  .navbar-open,
+  .navbar-scrolled.navbar-open {
+    width:
+      calc(100vw - 24px);
+
+    left: 12px;
+  }
+
+  .navbar-logo img {
+    width: 125px;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .navbar,
+  .navbar-logo img,
+  .menu-button,
+  .menu-button span,
+  .menu-panel,
+  .menu-links a,
+  .menu-links a small {
+    transition: none;
+  }
+}
