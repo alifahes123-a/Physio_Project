@@ -59,7 +59,7 @@ function AskPhysio() {
       return;
     }
 
-    const message = `Hello Ali,
+    const message = `Hello  Dr Ali,
 
 My name is ${name.trim()}.
 
@@ -121,7 +121,7 @@ I am contacting you through The RevPhysio website.`;
 
         <p className="ask-physio-intro">
           Have a general physiotherapy question?
-          Send it directly to Ali through WhatsApp.
+          Send it directly to  Dr Ali through WhatsApp.
         </p>
 
         <form

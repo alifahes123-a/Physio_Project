@@ -33,7 +33,7 @@ function Contact() {
   }, []);
 
   const bookingMessage = encodeURIComponent(
-    "Hi Ali, I'd like to book a physiotherapy session with Rev Physio."
+    "Hi Dr  Ali, I'd like to book a physiotherapy session with Rev Physio."
   );
 
   const bookingLink = `${WHATSAPP}?text=${bookingMessage}`;
@@ -145,7 +145,8 @@ function Contact() {
             </div>
 
             <div className="contact-detail-bottom">
-              <small>MESSAGE ALI</small>
+              <small>MESSAGE  Dr 
+              ALI</small>
               <strong>Start a conversation</strong>
             </div>
           </a>

@@ -8,6 +8,8 @@ import Services from "./components/Services";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import AskPhysio from "./components/AskPhysio";
+import SiteEnhancements from "./components/SiteEnhancements";
+
 
 import "./App.css";
 
@@ -15,7 +17,7 @@ function App() {
   return (
     <>
       <Navbar />
-
+      <SiteEnhancements />
       <main>
         <Hero />
         <About />
