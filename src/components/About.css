@@ -1,0 +1,607 @@
+/* ==========================================
+   ABOUT
+========================================== */
+
+.about {
+  position: relative;
+  overflow: hidden;
+
+  padding: 120px 7% 85px;
+
+  background:
+    radial-gradient(
+      circle at 88% 10%,
+      rgba(18, 150, 210, 0.15),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 5% 95%,
+      rgba(143, 196, 57, 0.1),
+      transparent 27%
+    ),
+    #0d5068;
+
+  color: #ffffff;
+}
+
+.about-container {
+  position: relative;
+  z-index: 3;
+
+  width: 100%;
+  max-width: 1500px;
+
+  margin: 0 auto;
+}
+
+/* ==========================================
+   BACKGROUND REV
+========================================== */
+
+.about-bg-text {
+  position: absolute;
+
+  z-index: 0;
+
+  right: -4vw;
+  top: 20px;
+
+  color: rgba(255, 255, 255, 0.025);
+
+  font-size: clamp(190px, 29vw, 450px);
+  font-weight: 900;
+
+  line-height: 0.8;
+  letter-spacing: -0.09em;
+
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ==========================================
+   DECORATIVE ORBITS
+========================================== */
+
+.about-orbit {
+  position: absolute;
+
+  z-index: 0;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.about-orbit-one {
+  width: 500px;
+  height: 500px;
+
+  right: -250px;
+  top: -230px;
+
+  border:
+    1px solid rgba(143, 196, 57, 0.13);
+}
+
+.about-orbit-two {
+  width: 320px;
+  height: 320px;
+
+  right: -150px;
+  top: -130px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.about-header {
+  display: grid;
+
+  grid-template-columns: 1.05fr 0.95fr;
+
+  gap: clamp(55px, 8vw, 110px);
+
+  align-items: end;
+
+  margin-bottom: 70px;
+}
+
+/* ==========================================
+   LABEL
+========================================== */
+
+.about-label {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 24px;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 3px;
+}
+
+.about-label-dot {
+  width: 8px;
+  height: 8px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #8fc439;
+
+  box-shadow:
+    0 0 0 5px rgba(143, 196, 57, 0.1);
+}
+
+/* ==========================================
+   MAIN TITLE
+========================================== */
+
+.about-title-wrap h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(50px, 6vw, 88px);
+  font-weight: 700;
+
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+
+.about-title-wrap h2 span {
+  color: #8fc439;
+}
+
+/* ==========================================
+   INTRO
+========================================== */
+
+.about-intro {
+  max-width: 520px;
+
+  padding-bottom: 4px;
+}
+
+.about-intro-line {
+  width: 48px;
+  height: 3px;
+
+  margin-bottom: 24px;
+
+  border-radius: 20px;
+
+  background: #1296d2;
+}
+
+.about-intro > p {
+  margin: 0 0 20px;
+
+  color: #ffffff;
+
+  font-size: clamp(17px, 1.5vw, 22px);
+  font-weight: 500;
+
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+}
+
+.about-intro > span {
+  display: block;
+
+  max-width: 470px;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  font-size: 13px;
+
+  line-height: 1.75;
+}
+
+/* ==========================================
+   CARDS
+========================================== */
+
+.about-cards {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 16px;
+}
+
+.about-card {
+  position: relative;
+
+  min-height: 300px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  padding: 28px;
+
+  border-radius: 24px;
+
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 24px 55px rgba(0, 0, 0, 0.12);
+}
+
+/* ==========================================
+   RECOVER
+========================================== */
+
+.about-card-recover {
+  background:
+    linear-gradient(
+      145deg,
+      #12627d 0%,
+      #105a72 100%
+    );
+
+  border:
+    1px solid rgba(255, 255, 255, 0.1);
+
+  color: #ffffff;
+}
+
+/* ==========================================
+   REBUILD
+========================================== */
+
+.about-card-rebuild {
+  background:
+    linear-gradient(
+      145deg,
+      #9bce3b 0%,
+      #8fc439 100%
+    );
+
+  border:
+    1px solid rgba(255, 255, 255, 0.13);
+
+  color: #0b4054;
+}
+
+/* ==========================================
+   REVOLUTIONIZE
+========================================== */
+
+.about-card-revolutionize {
+  background:
+    linear-gradient(
+      145deg,
+      #0b4054 0%,
+      #083749 100%
+    );
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  color: #ffffff;
+}
+
+/* ==========================================
+   SMALL CARD ACCENT
+========================================== */
+
+.about-card-accent {
+  position: absolute;
+
+  top: 28px;
+  right: 28px;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #8fc439;
+}
+
+.about-card-rebuild
+.about-card-accent {
+  background: #0b4054;
+}
+
+.about-card-revolutionize
+.about-card-accent {
+  background: #1296d2;
+}
+
+/* ==========================================
+   CARD CONTENT
+========================================== */
+
+.about-card-content {
+  position: absolute;
+
+  left: 28px;
+  right: 28px;
+  bottom: 28px;
+}
+
+.about-card-content > span {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #7ed5ff;
+
+  font-size: 7px;
+  font-weight: 800;
+
+  letter-spacing: 2.6px;
+}
+
+.about-card-rebuild
+.about-card-content > span {
+  color: rgba(11, 64, 84, 0.65);
+}
+
+.about-card-content h3 {
+  margin: 0 0 16px;
+
+  font-size: clamp(32px, 3vw, 46px);
+  font-weight: 650;
+
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.about-card-rebuild
+.about-card-content h3 {
+  color: #0b4054;
+}
+
+.about-card-content p {
+  max-width: 350px;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.63);
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+.about-card-rebuild
+.about-card-content p {
+  color: rgba(11, 64, 84, 0.72);
+}
+
+/* ==========================================
+   BOTTOM PHILOSOPHY
+========================================== */
+
+.about-footer-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 16px;
+
+  margin-top: 48px;
+  padding-top: 28px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  color: rgba(255, 255, 255, 0.35);
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 2.5px;
+}
+
+.about-footer-line i {
+  width: 24px;
+  height: 1px;
+
+  background:
+    rgba(255, 255, 255, 0.12);
+}
+
+.about-footer-line strong {
+  color: #8fc439;
+}
+
+/* ==========================================
+   ENTRANCE ANIMATIONS
+========================================== */
+
+.about-title-wrap,
+.about-intro,
+.about-card,
+.about-footer-line {
+  opacity: 0;
+
+  transform: translateY(30px);
+
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s
+      cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.show-about
+.about-title-wrap,
+.show-about
+.about-intro,
+.show-about
+.about-card,
+.show-about
+.about-footer-line {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+.show-about
+.about-intro {
+  transition-delay: 0.08s;
+}
+
+.show-about
+.about-card:nth-child(1) {
+  transition-delay: 0.13s;
+}
+
+.show-about
+.about-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.show-about
+.about-card:nth-child(3) {
+  transition-delay: 0.27s;
+}
+
+.show-about
+.about-footer-line {
+  transition-delay: 0.34s;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 950px) {
+  .about {
+    padding: 110px 5% 80px;
+  }
+
+  .about-header {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+
+    margin-bottom: 55px;
+  }
+
+  .about-intro {
+    max-width: 600px;
+  }
+
+  .about-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card {
+    min-height: 245px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+  .about {
+    padding: 90px 20px 65px;
+  }
+
+  .about-header {
+    gap: 34px;
+
+    margin-bottom: 45px;
+  }
+
+  .about-title-wrap h2 {
+    font-size: clamp(46px, 14vw, 64px);
+  }
+
+  .about-intro > p {
+    font-size: 17px;
+  }
+
+  .about-intro > span {
+    font-size: 12px;
+  }
+
+  .about-cards {
+    gap: 12px;
+  }
+
+  .about-card {
+    min-height: 230px;
+
+    padding: 23px;
+
+    border-radius: 20px;
+  }
+
+  .about-card-accent {
+    top: 23px;
+    right: 23px;
+  }
+
+  .about-card-content {
+    left: 23px;
+    right: 23px;
+    bottom: 23px;
+  }
+
+  .about-card-content h3 {
+    font-size: 35px;
+  }
+
+  .about-footer-line {
+    flex-wrap: wrap;
+
+    gap: 9px 13px;
+
+    margin-top: 38px;
+
+    font-size: 7px;
+
+    letter-spacing: 1.7px;
+  }
+
+  .about-footer-line i {
+    width: 14px;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-title-wrap,
+  .about-intro,
+  .about-card,
+  .about-footer-line {
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+  }
+
+  .about-card {
+    transition: none;
+  }
+}

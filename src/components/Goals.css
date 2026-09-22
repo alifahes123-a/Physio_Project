@@ -1,0 +1,618 @@
+/* ==========================================
+   GOALS
+========================================== */
+
+.goals {
+  position: relative;
+  overflow: hidden;
+
+  padding: 120px 7% 90px;
+
+  background: #0b4054;
+  color: #ffffff;
+}
+
+.goals-container {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1450px;
+
+  margin: 0 auto;
+}
+
+/* ==========================================
+   DECORATION
+========================================== */
+
+.goals-bg-word {
+  position: absolute;
+
+  right: -4vw;
+  top: 80px;
+
+  color: rgba(255, 255, 255, 0.018);
+
+  font-size: clamp(220px, 31vw, 500px);
+  font-weight: 900;
+  line-height: 0.75;
+  letter-spacing: -0.09em;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+.goals-orbit {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.goals-orbit-one {
+  width: 520px;
+  height: 520px;
+
+  right: -260px;
+  top: -230px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.045);
+}
+
+.goals-orbit-two {
+  width: 330px;
+  height: 330px;
+
+  right: -100px;
+  top: -120px;
+
+  border:
+    1px solid rgba(143, 196, 57, 0.1);
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.goals-header {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(280px, 0.65fr);
+
+  align-items: end;
+
+  gap: clamp(50px, 8vw, 110px);
+
+  margin-bottom: 75px;
+}
+
+.goals-label {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 24px;
+
+  color: #8fc439;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.goals-label-dot {
+  width: 8px;
+  height: 8px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #1296d2;
+}
+
+.goals-title h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(54px, 6.2vw, 92px);
+  font-weight: 700;
+  line-height: 0.88;
+
+  letter-spacing: -0.06em;
+}
+
+.goals-title h2 span {
+  color: #8fc439;
+}
+
+/* ==========================================
+   INTRO
+========================================== */
+
+.goals-intro {
+  max-width: 440px;
+
+  padding-bottom: 5px;
+}
+
+.goals-intro-line {
+  width: 48px;
+  height: 2px;
+
+  margin-bottom: 20px;
+
+  background: #1296d2;
+}
+
+.goals-intro p {
+  margin: 0 0 15px;
+
+  color: #ffffff;
+
+  font-size: clamp(17px, 1.6vw, 22px);
+  font-weight: 500;
+  line-height: 1.45;
+
+  letter-spacing: -0.02em;
+}
+
+.goals-intro > span {
+  display: block;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+/* ==========================================
+   GOALS GRID
+========================================== */
+
+.goals-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+.goal-card {
+  position: relative;
+
+  min-width: 0;
+  min-height: 390px;
+
+  box-sizing: border-box;
+
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 25px;
+
+  background:
+    rgba(255, 255, 255, 0.025);
+
+  opacity: 0;
+
+  transform: translateY(35px);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s
+      cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.goals-visible .goal-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.goals-visible
+.goal-card:nth-child(1) {
+  transition-delay: 0.12s;
+}
+
+.goals-visible
+.goal-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.goals-visible
+.goal-card:nth-child(3) {
+  transition-delay: 0.28s;
+}
+
+.goal-card:hover {
+  background:
+    rgba(255, 255, 255, 0.05);
+
+  border-color:
+    rgba(143, 196, 57, 0.3);
+}
+
+/* ==========================================
+   CARD TOP
+========================================== */
+
+.goal-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.goal-small-title {
+  color: #1296d2;
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.goal-symbol {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 50%;
+
+  color: #8fc439;
+
+  font-size: 17px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.goal-card:hover .goal-symbol {
+  transform: rotate(10deg);
+
+  background: #8fc439;
+  color: #0b4054;
+}
+
+/* ==========================================
+   CARD CONTENT
+========================================== */
+
+.goal-card-content {
+  padding: 55px 0 35px;
+
+  min-width: 0;
+}
+
+.goal-card-content h3 {
+  margin: 0 0 20px;
+
+  color: #ffffff;
+
+  font-size: clamp(34px, 3.4vw, 52px);
+  font-weight: 600;
+  line-height: 0.98;
+
+  letter-spacing: -0.05em;
+
+  overflow-wrap: break-word;
+}
+
+.goal-card-content h3 span {
+  color: #8fc439;
+}
+
+.goal-card-content p {
+  max-width: 270px;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.goal-card-line {
+  width: 100%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #8fc439,
+      rgba(143, 196, 57, 0)
+    );
+}
+
+/* ==========================================
+   PHILOSOPHY
+========================================== */
+
+.goals-philosophy {
+  margin-top: 100px;
+
+  padding-top: 70px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  opacity: 0;
+
+  transform: translateY(35px);
+
+  transition:
+    opacity 0.8s ease 0.32s,
+    transform 0.8s ease 0.32s;
+}
+
+.goals-visible
+.goals-philosophy {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.goals-philosophy-label {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  margin-bottom: 40px;
+
+  color: #1296d2;
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.goals-philosophy-label span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #8fc439;
+}
+
+.goals-philosophy-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(280px, 0.8fr);
+
+  gap: 70px;
+
+  align-items: end;
+}
+
+.goals-philosophy-layout h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(45px, 5.2vw, 78px);
+  font-weight: 600;
+  line-height: 0.92;
+
+  letter-spacing: -0.055em;
+}
+
+.goals-philosophy-copy {
+  padding-bottom: 5px;
+}
+
+.goals-philosophy-copy p {
+  margin: 7px 0;
+
+  color: rgba(255, 255, 255, 0.4);
+
+  font-size: clamp(18px, 2vw, 27px);
+  font-weight: 500;
+
+  letter-spacing: -0.025em;
+}
+
+.goals-philosophy-copy strong {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* ==========================================
+   FINAL BRAND LINE
+========================================== */
+
+.goals-final {
+  margin-top: 65px;
+
+  padding-top: 25px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 22px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  color: rgba(255, 255, 255, 0.4);
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.goals-final strong {
+  color: #8fc439;
+}
+
+/* ==========================================
+   ANIMATION
+========================================== */
+
+.goals-title,
+.goals-intro {
+  opacity: 0;
+
+  transform: translateY(30px);
+
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s
+      cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.goals-visible .goals-title,
+.goals-visible .goals-intro {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.goals-visible .goals-intro {
+  transition-delay: 0.1s;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1000px) {
+  .goals {
+    padding: 110px 5% 80px;
+  }
+
+  .goals-header {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+
+    margin-bottom: 60px;
+  }
+
+  .goals-intro {
+    max-width: 550px;
+  }
+
+  .goals-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .goal-card {
+    min-height: 300px;
+  }
+
+  .goal-card-content {
+    padding: 45px 0 30px;
+  }
+
+  .goals-philosophy-layout {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+  .goals {
+    padding: 95px 20px 65px;
+  }
+
+  .goals-title h2 {
+    font-size: clamp(47px, 14vw, 65px);
+  }
+
+  .goals-intro p {
+    font-size: 18px;
+  }
+
+  .goal-card {
+    min-height: 300px;
+
+    padding: 24px;
+
+    border-radius: 21px;
+  }
+
+  .goal-card-content {
+    padding: 42px 0 25px;
+  }
+
+  .goal-card-content h3 {
+    font-size: clamp(34px, 10vw, 45px);
+  }
+
+  .goals-philosophy {
+    margin-top: 75px;
+    padding-top: 55px;
+  }
+
+  .goals-philosophy-layout h3 {
+    font-size: clamp(40px, 12vw, 55px);
+  }
+
+  .goals-philosophy-copy p {
+    font-size: 18px;
+  }
+
+  .goals-final {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 8px;
+
+    font-size: 8px;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .goals-title,
+  .goals-intro,
+  .goal-card,
+  .goals-philosophy {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .goal-symbol {
+    transition: none;
+  }
+}
