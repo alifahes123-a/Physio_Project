@@ -1,0 +1,427 @@
+/* ==========================================
+   REV — SITE ENHANCEMENTS
+========================================== */
+
+.rev-scroll-progress {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  pointer-events: none;
+}
+
+.rev-scroll-progress span {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transform: scaleX(0);
+  transform-origin: left center;
+  background: #8fc439;
+  box-shadow: 0 0 16px rgba(143, 196, 57, 0.32);
+  will-change: transform;
+}
+
+/* Active navbar section — deliberately NO 01 / 02 numbers. */
+.navbar a.rev-nav-active,
+nav a.rev-nav-active {
+  color: #0b4054;
+}
+
+.navbar a.rev-nav-active::after,
+nav a.rev-nav-active::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  border-radius: 50%;
+  background: #8fc439;
+  transform: translateY(-50%);
+  box-shadow: 0 0 0 5px rgba(143, 196, 57, 0.11);
+}
+
+/* If the existing nav link is not positioned, anchor the indicator to it. */
+.navbar a,
+nav a {
+  position: relative;
+}
+
+/* ==========================================
+   BACK TO TOP
+========================================== */
+
+.rev-back-top {
+  position: fixed;
+  z-index: 1350;
+  right: 28px;
+  bottom: 112px;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  border: 1px solid rgba(11, 64, 84, 0.11);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: #0b4054;
+  box-shadow: 0 12px 34px rgba(11, 64, 84, 0.11);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px) scale(0.92);
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.25s ease;
+}
+
+.rev-back-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.rev-back-top strong {
+  color: #0b4054;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.rev-back-top span {
+  color: #8fc439;
+  font-size: 13px;
+  font-weight: 800;
+  transition: transform 0.25s ease;
+}
+
+.rev-back-top:hover {
+  background: #0b4054;
+}
+
+.rev-back-top:hover strong {
+  color: #ffffff;
+}
+
+.rev-back-top:hover span {
+  transform: translateY(-3px);
+}
+
+/* ==========================================
+   QUICK CHECK-IN
+========================================== */
+
+.rev-checkin {
+  position: fixed;
+  z-index: 1400;
+  left: 28px;
+  bottom: 28px;
+  width: min(390px, calc(100vw - 56px));
+  pointer-events: none;
+}
+
+.rev-checkin-trigger {
+  min-height: 48px;
+  padding: 0 15px 0 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  background: #0b4054;
+  color: #ffffff;
+  box-shadow: 0 14px 38px rgba(11, 64, 84, 0.18);
+  cursor: pointer;
+  pointer-events: auto;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.rev-checkin-trigger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 46px rgba(11, 64, 84, 0.24);
+}
+
+.rev-checkin-trigger > span:nth-child(2) {
+  font-size: 7px;
+  font-weight: 850;
+  letter-spacing: 1.7px;
+}
+
+.rev-checkin-trigger strong {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #8fc439;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.rev-checkin-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #8fc439;
+  box-shadow: 0 0 0 5px rgba(143, 196, 57, 0.12);
+}
+
+.rev-checkin-panel {
+  position: absolute;
+  left: 0;
+  bottom: 62px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(11, 64, 84, 0.09);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 24px 70px rgba(11, 64, 84, 0.16);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px) scale(0.97);
+  transform-origin: left bottom;
+  pointer-events: none;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.rev-checkin.is-open .rev-checkin-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.rev-checkin-panel::before {
+  content: "R";
+  position: absolute;
+  right: -14px;
+  top: 55px;
+  color: rgba(11, 64, 84, 0.025);
+  font-size: 180px;
+  font-weight: 900;
+  line-height: 0.8;
+  pointer-events: none;
+}
+
+.rev-checkin-head {
+  position: relative;
+  z-index: 1;
+}
+
+.rev-checkin-head > span {
+  display: block;
+  margin-bottom: 10px;
+  color: #1296d2;
+  font-size: 7px;
+  font-weight: 850;
+  letter-spacing: 2px;
+}
+
+.rev-checkin-head > strong {
+  max-width: 280px;
+  display: block;
+  color: #0b4054;
+  font-size: 27px;
+  font-weight: 650;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.rev-checkin-options {
+  position: relative;
+  z-index: 1;
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.rev-checkin-options button {
+  min-height: 46px;
+  padding: 0 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border: 1px solid rgba(11, 64, 84, 0.09);
+  border-radius: 14px;
+  background: #f5f8f3;
+  color: #0b4054;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.rev-checkin-options button span {
+  font-size: 9px;
+  font-weight: 750;
+}
+
+.rev-checkin-options button i {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 auto;
+  border: 1px solid rgba(11, 64, 84, 0.24);
+  border-radius: 50%;
+  transition: all 0.25s ease;
+}
+
+.rev-checkin-options button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(143, 196, 57, 0.5);
+}
+
+.rev-checkin-options button.is-selected {
+  background: #0b4054;
+  border-color: #0b4054;
+  color: #ffffff;
+}
+
+.rev-checkin-options button.is-selected i {
+  border-color: #8fc439;
+  background: #8fc439;
+  box-shadow: 0 0 0 4px rgba(143, 196, 57, 0.12);
+}
+
+.rev-checkin-result {
+  position: relative;
+  z-index: 1;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(7px);
+  transition:
+    max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease,
+    transform 0.35s ease;
+}
+
+.rev-checkin-result.is-visible {
+  max-height: 190px;
+  padding-top: 18px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.rev-checkin-result p {
+  margin: 0;
+  color: rgba(11, 64, 84, 0.62);
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.rev-checkin-result button {
+  margin-top: 14px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border: 0;
+  background: transparent;
+  color: #0b4054;
+  font-size: 7px;
+  font-weight: 850;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+}
+
+.rev-checkin-result button span {
+  color: #8fc439;
+  font-size: 13px;
+  transition: transform 0.25s ease;
+}
+
+.rev-checkin-result button:hover span {
+  transform: translateX(4px);
+}
+
+.rev-checkin-panel small {
+  position: relative;
+  z-index: 1;
+  margin-top: 18px;
+  padding-top: 13px;
+  display: block;
+  border-top: 1px solid rgba(11, 64, 84, 0.08);
+  color: rgba(11, 64, 84, 0.34);
+  font-size: 7px;
+  line-height: 1.5;
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 700px) {
+  .rev-scroll-progress {
+    height: 2px;
+  }
+
+  .rev-checkin {
+    left: 14px;
+    bottom: 14px;
+    width: min(360px, calc(100vw - 28px));
+  }
+
+  .rev-checkin-panel {
+    bottom: 58px;
+    padding: 20px;
+    border-radius: 21px;
+  }
+
+  .rev-checkin-trigger {
+    min-height: 46px;
+  }
+
+  .rev-checkin-head > strong {
+    font-size: 25px;
+  }
+
+  .rev-back-top {
+    right: 16px;
+    bottom: 86px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (max-width: 390px) {
+  .rev-checkin-options {
+    grid-template-columns: 1fr;
+  }
+
+  .rev-checkin-panel {
+    max-height: min(520px, calc(100vh - 100px));
+    overflow-y: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rev-back-top,
+  .rev-checkin-trigger,
+  .rev-checkin-panel,
+  .rev-checkin-options button,
+  .rev-checkin-result,
+  .rev-checkin-result button span {
+    transition: none;
+  }
+}

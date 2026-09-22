@@ -1,11 +1,8 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
-
 import Experience from "./components/Experience";
 import Goals from "./components/Goals";
-
-
 import PhysioTips from "./components/PhysioTips";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
@@ -24,15 +21,12 @@ function App() {
         <About />
         <Experience />
         <Goals />
-       
-
         <PhysioTips />
         <Services />
         <Contact />
       </main>
 
       <Footer />
-
       <AskPhysio />
     </>
   );
