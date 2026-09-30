@@ -349,8 +349,8 @@ function Experience() {
 
                 <span>
                   A foundation built around
-                  physiotherapy, rehabilitation,
-                  recovery, and sport.
+                  physiotherapy, rehabilitation,and
+                  recovery.
                 </span>
 
               </div>

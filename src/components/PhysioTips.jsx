@@ -203,10 +203,12 @@ function PhysioTips() {
           </div>
 
           <h2>
-            A little knowledge.
-            <br />
-            <span>Every visit.</span>
-          </h2>
+  <span className="physio-title-line">A little</span>
+  <span className="physio-title-line">knowledge.</span>
+  <span className="physio-title-line physio-title-green">
+    Every visit.
+  </span>
+</h2>
 
           <p>
             One simple movement and rehabilitation tip,

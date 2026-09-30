@@ -140,8 +140,7 @@ function Hero() {
             <div className="hero-person-line" />
 
             <p>
-              PHYSIOTHERAPY · REHABILITATION ·
-              PERFORMANCE
+              Dr in Physiotherapy
             </p>
           </div>
         </div>

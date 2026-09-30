@@ -45,7 +45,7 @@ function Goals() {
       label: "RETURN",
       title: "Return to what",
       highlight: "matters.",
-      text: "Daily life. Work. Sport. Performance.",
+      text: "Daily life. Work. Performance.",
       symbol: "→",
     },
   ];
