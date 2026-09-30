@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import aliPhoto from "../assets/AliFarhat.png";
+import aliPhoto from "../assets/alifarhat.png";
 import "./Hero.css";
 
 function Hero() {
