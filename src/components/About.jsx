@@ -1,6 +1,10 @@
 import { useEffect, useRef } from "react";
 import "./About.css";
 
+import rebuild from "../assets/rebuild.png";
+import recover from "../assets/recover.png";
+import revol from "../assets/revol.png";
+
 function About() {
   const sectionRef = useRef(null);
 
@@ -32,6 +36,7 @@ function About() {
       className="about"
       ref={sectionRef}
     >
+      {/* BACKGROUND REV */}
       <div
         className="about-bg-text"
         aria-hidden="true"
@@ -39,6 +44,7 @@ function About() {
         REV
       </div>
 
+      {/* DECORATIVE ORBITS */}
       <div
         className="about-orbit about-orbit-one"
         aria-hidden="true"
@@ -50,7 +56,10 @@ function About() {
       />
 
       <div className="about-container">
+
+        {/* HEADER */}
         <div className="about-header">
+
           <div className="about-title-wrap">
             <div className="about-label">
               <span className="about-label-dot" />
@@ -80,10 +89,25 @@ function About() {
               individualized.
             </span>
           </div>
+
         </div>
 
+        {/* ======================================
+            CARDS
+        ====================================== */}
+
         <div className="about-cards">
+
+          {/* RECOVER */}
           <article className="about-card about-card-recover">
+
+            <img
+              src={recover}
+              alt=""
+              className="about-card-image"
+              aria-hidden="true"
+            />
+
             <div className="about-card-accent" />
 
             <div className="about-card-content">
@@ -97,9 +121,19 @@ function About() {
                 forward with confidence.
               </p>
             </div>
+
           </article>
 
+          {/* REBUILD */}
           <article className="about-card about-card-rebuild">
+
+            <img
+              src={rebuild}
+              alt=""
+              className="about-card-image"
+              aria-hidden="true"
+            />
+
             <div className="about-card-accent" />
 
             <div className="about-card-content">
@@ -113,9 +147,19 @@ function About() {
                 rehabilitation plan built around you.
               </p>
             </div>
+
           </article>
 
+          {/* REVOLUTIONIZE */}
           <article className="about-card about-card-revolutionize">
+
+            <img
+              src={revol}
+              alt=""
+              className="about-card-image"
+              aria-hidden="true"
+            />
+
             <div className="about-card-accent" />
 
             <div className="about-card-content">
@@ -129,8 +173,14 @@ function About() {
                 and building long-term confidence.
               </p>
             </div>
+
           </article>
+
         </div>
+
+        {/* ======================================
+            BOTTOM PHILOSOPHY
+        ====================================== */}
 
         <div className="about-footer-line">
           <span>RECOVER</span>
@@ -139,6 +189,7 @@ function About() {
           <i />
           <strong>REVOLUTIONIZE</strong>
         </div>
+
       </div>
     </section>
   );

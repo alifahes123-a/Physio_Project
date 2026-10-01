@@ -658,4 +658,25 @@
   .contact-book b {
     transition: none;
   }
+  .contact-icon svg {
+  width: 15px;
+  height: 15px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-icon .icon-fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* WhatsApp icon needs to be filled */
+.contact-detail:nth-child(2) .contact-icon svg {
+  fill: currentColor;
+  stroke: none;
+}
 }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./PhysioTips.css";
+import tipsimg from "../assets/tips.png";
 
 const tips = [
   {
@@ -188,14 +189,35 @@ function PhysioTips() {
 
   return (
     <section id="physio-tips" className="physio-tips">
-      <div className="physio-tips-bg-text" aria-hidden="true">
+      {/* BACKGROUND RUNNER */}
+     <img
+  src={tipsimg}
+  alt=""
+  className="physio-tips-runner"
+  aria-hidden="true"
+/>
+
+      {/* BACKGROUND TIP TEXT */}
+      <div
+        className="physio-tips-bg-text"
+        aria-hidden="true"
+      >
         TIP
       </div>
 
-      <div className="physio-tips-circle physio-tips-circle-one" />
-      <div className="physio-tips-circle physio-tips-circle-two" />
+      {/* DECORATIVE CIRCLES */}
+      <div
+        className="physio-tips-circle physio-tips-circle-one"
+        aria-hidden="true"
+      />
+
+      <div
+        className="physio-tips-circle physio-tips-circle-two"
+        aria-hidden="true"
+      />
 
       <div className="physio-tips-container">
+        {/* LEFT SIDE */}
         <div className="physio-tips-heading">
           <div className="physio-tips-label">
             <span>+</span>
@@ -203,12 +225,18 @@ function PhysioTips() {
           </div>
 
           <h2>
-  <span className="physio-title-line">A little</span>
-  <span className="physio-title-line">knowledge.</span>
-  <span className="physio-title-line physio-title-green">
-    Every visit.
-  </span>
-</h2>
+            <span className="physio-title-line">
+              A little
+            </span>
+
+            <span className="physio-title-line">
+              knowledge.
+            </span>
+
+            <span className="physio-title-line physio-title-green">
+              Every visit.
+            </span>
+          </h2>
 
           <p>
             One simple movement and rehabilitation tip,
@@ -216,6 +244,7 @@ function PhysioTips() {
           </p>
         </div>
 
+        {/* TIP CARD */}
         <article
           className="physio-tip-card"
           key={tipKey}
@@ -225,7 +254,9 @@ function PhysioTips() {
               {currentTip.category}
             </span>
 
-            <span className="physio-tip-mark">+</span>
+            <span className="physio-tip-mark">
+              +
+            </span>
           </div>
 
           <div className="physio-tip-content">
@@ -233,9 +264,13 @@ function PhysioTips() {
               TODAY'S TIP
             </span>
 
-            <h3>{currentTip.title}</h3>
+            <h3>
+              {currentTip.title}
+            </h3>
 
-            <p>{currentTip.text}</p>
+            <p>
+              {currentTip.text}
+            </p>
           </div>
 
           <div className="physio-tip-bottom">
@@ -250,7 +285,10 @@ function PhysioTips() {
               className="physio-tip-next"
               aria-label="Show another physiotherapy tip"
             >
-              <span>SHOW ANOTHER TIP</span>
+              <span>
+                SHOW ANOTHER TIP
+              </span>
+
               <span className="physio-tip-next-circle">
                 →
               </span>
@@ -258,10 +296,11 @@ function PhysioTips() {
           </div>
         </article>
 
+        {/* DISCLAIMER */}
         <p className="physio-tips-note">
-          General educational information only. Individual
-          needs vary and may require a physiotherapy
-          assessment.
+          General educational information only.
+          Individual needs vary and may require a
+          physiotherapy assessment.
         </p>
       </div>
     </section>

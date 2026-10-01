@@ -57,7 +57,7 @@ function Hero() {
               Move
             </span>
 
-            <span className="hero-title-line hero-title-outline">
+            <span className="hero-title-line hero-title-green">
               better.
             </span>
 
@@ -135,12 +135,12 @@ function Hero() {
           </div>
 
           <div className="hero-person">
-            <span>ALI FARHAT</span>
+            <span> Dr ALI FARHAT</span>
 
             <div className="hero-person-line" />
 
             <p>
-              Dr in Physiotherapy
+              Doctor in Physical Therapy
             </p>
           </div>
         </div>

@@ -256,7 +256,7 @@ I am contacting you through The RevPhysio website.`;
         }
       >
         <span className="ask-physio-trigger-icon">
-          +
+          ASK
         </span>
 
         <span className="ask-physio-trigger-text">
