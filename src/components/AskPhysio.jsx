@@ -9,13 +9,16 @@ function AskPhysio() {
 
   const panelRef = useRef(null);
 
-  // WhatsApp number:
   // Lebanon country code +961 + 76 917 602
   const whatsappNumber = "96176917602";
 
   const closePanel = () => {
     setIsOpen(false);
   };
+
+  /* ==========================================
+     CLOSE WITH ESCAPE
+  ========================================== */
 
   useEffect(() => {
     const handleEscape = (event) => {
@@ -30,6 +33,10 @@ function AskPhysio() {
       window.removeEventListener("keydown", handleEscape);
     };
   }, []);
+
+  /* ==========================================
+     CLOSE WHEN CLICKING OUTSIDE
+  ========================================== */
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
@@ -52,6 +59,10 @@ function AskPhysio() {
     };
   }, [isOpen]);
 
+  /* ==========================================
+     SEND TO WHATSAPP
+  ========================================== */
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -59,7 +70,7 @@ function AskPhysio() {
       return;
     }
 
-    const message = `Hello  Dr Ali,
+    const message = `Hello Dr Ali,
 
 My name is ${name.trim()}.
 
@@ -70,9 +81,10 @@ ${question.trim()}
 
 I am contacting you through The RevPhysio website.`;
 
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-      message
-    )}`;
+    const whatsappURL =
+      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+        message
+      )}`;
 
     window.open(
       whatsappURL,
@@ -88,7 +100,10 @@ I am contacting you through The RevPhysio website.`;
       }`}
       ref={panelRef}
     >
-      {/* POPUP */}
+      {/* ======================================
+          POPUP PANEL
+      ====================================== */}
+
       <div
         className="ask-physio-panel"
         role="dialog"
@@ -96,6 +111,17 @@ I am contacting you through The RevPhysio website.`;
         aria-hidden={!isOpen}
         aria-labelledby="ask-physio-title"
       >
+        {/* BACKGROUND WORD */}
+
+        <div
+          className="ask-physio-rev"
+          aria-hidden="true"
+        >
+          REV
+        </div>
+
+        {/* PANEL HEADER */}
+
         <div className="ask-physio-panel-top">
           <div>
             <span className="ask-physio-small-label">
@@ -119,15 +145,21 @@ I am contacting you through The RevPhysio website.`;
           </button>
         </div>
 
+        {/* INTRO */}
+
         <p className="ask-physio-intro">
           Have a general physiotherapy question?
-          Send it directly to  Dr Ali through WhatsApp.
+          Send it directly to Dr Ali through WhatsApp.
         </p>
+
+        {/* FORM */}
 
         <form
           className="ask-physio-form"
           onSubmit={handleSubmit}
         >
+          {/* NAME */}
+
           <div className="ask-physio-field">
             <label htmlFor="ask-name">
               YOUR NAME
@@ -144,6 +176,8 @@ I am contacting you through The RevPhysio website.`;
               required
             />
           </div>
+
+          {/* TOPIC */}
 
           <div className="ask-physio-field">
             <label htmlFor="ask-topic">
@@ -200,6 +234,8 @@ I am contacting you through The RevPhysio website.`;
             </select>
           </div>
 
+          {/* QUESTION */}
+
           <div className="ask-physio-field">
             <label htmlFor="ask-question">
               YOUR QUESTION
@@ -217,6 +253,8 @@ I am contacting you through The RevPhysio website.`;
             />
           </div>
 
+          {/* SEND */}
+
           <button
             className="ask-physio-send"
             type="submit"
@@ -229,24 +267,24 @@ I am contacting you through The RevPhysio website.`;
           </button>
         </form>
 
+        {/* DISCLAIMER */}
+
         <p className="ask-physio-disclaimer">
           This feature is for general questions and
           does not replace an in-person clinical
           assessment.
         </p>
-
-        <div
-          className="ask-physio-rev"
-          aria-hidden="true"
-        >
-          REV
-        </div>
       </div>
 
-      {/* FLOATING BUTTON */}
+      {/* ======================================
+          FLOATING BUTTON
+      ====================================== */}
+
       <button
         className="ask-physio-trigger"
-        onClick={() => setIsOpen((current) => !current)}
+        onClick={() =>
+          setIsOpen((current) => !current)
+        }
         type="button"
         aria-expanded={isOpen}
         aria-label={
@@ -255,17 +293,29 @@ I am contacting you through The RevPhysio website.`;
             : "Ask the Physio"
         }
       >
+        {/* DESKTOP QUESTION ICON */}
+
         <span className="ask-physio-trigger-icon">
-          ASK
+          ?
         </span>
+
+        {/* DESKTOP TEXT */}
 
         <span className="ask-physio-trigger-text">
           <strong>ASK THE PHYSIO</strong>
           <small>Have a question?</small>
         </span>
 
+        {/* DESKTOP ARROW */}
+
         <span className="ask-physio-trigger-arrow">
           {isOpen ? "×" : "→"}
+        </span>
+
+        {/* MOBILE ONLY */}
+
+        <span className="ask-mobile-label">
+          {isOpen ? "CLOSE" : "ASK"}
         </span>
       </button>
     </div>

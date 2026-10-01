@@ -7,8 +7,16 @@ const WHATSAPP = "https://wa.me/96176917602";
 const INSTAGRAM =
   "https://www.instagram.com/therevphysio?stkn=MWJpazg5aGM1OTRrNw==";
 
-  const PhoneIcon = () => (
-  <svg viewBox="0 0 24 24" aria-hidden="true">
+/* ==========================================
+   ICONS
+========================================== */
+
+const PhoneIcon = () => (
+  <svg
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    className="contact-brand-svg phone-svg"
+  >
     <path
       d="M22 16.92v3a2 2 0 0 1-2.18 2
       19.79 19.79 0 0 1-8.63-3.07
@@ -27,7 +35,11 @@ const INSTAGRAM =
 );
 
 const WhatsAppIcon = () => (
-  <svg viewBox="0 0 24 24" aria-hidden="true">
+  <svg
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    className="contact-brand-svg whatsapp-svg"
+  >
     <path
       d="M20.52 3.48A11.86 11.86 0 0 0 12.08 0
       C5.5 0 .14 5.36.14 11.95
@@ -58,12 +70,37 @@ const WhatsAppIcon = () => (
 );
 
 const InstagramIcon = () => (
-  <svg viewBox="0 0 24 24" aria-hidden="true">
-    <rect x="2" y="2" width="20" height="20" rx="5" />
-    <circle cx="12" cy="12" r="4" />
-    <circle cx="17.5" cy="6.5" r="1" className="icon-fill" />
+  <svg
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    className="contact-brand-svg instagram-svg"
+  >
+    <path
+      d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5
+      A5.76 5.76 0 0 1 16.25 22h-8.5
+      A5.76 5.76 0 0 1 2 16.25v-8.5
+      A5.76 5.76 0 0 1 7.75 2Zm0 2
+      A3.76 3.76 0 0 0 4 7.75v8.5
+      A3.76 3.76 0 0 0 7.75 20h8.5
+      A3.76 3.76 0 0 0 20 16.25v-8.5
+      A3.76 3.76 0 0 0 16.25 4h-8.5ZM17.5 5.5
+      a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 7
+      a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2
+      a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"
+    />
   </svg>
 );
+
+const ArrowIcon = () => (
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M5 19 19 5" />
+    <path d="M9 5h10v10" />
+  </svg>
+);
+
+/* ==========================================
+   CONTACT
+========================================== */
 
 function Contact() {
   const sectionRef = useRef(null);
@@ -91,160 +128,200 @@ function Contact() {
   }, []);
 
   const bookingMessage = encodeURIComponent(
-    "Hi Dr  Ali, I'd like to book a physiotherapy session with Rev Physio."
+    "Hi Dr Ali, I'd like to book a physiotherapy session with Rev Physio."
   );
 
   const bookingLink = `${WHATSAPP}?text=${bookingMessage}`;
 
   return (
-    <section
-      id="contact"
-      className="contact"
-      ref={sectionRef}
-    >
-      <div
-        className="contact-rev"
-        aria-hidden="true"
-      >
+    <section id="contact" className="contact" ref={sectionRef}>
+      {/* DECORATION */}
+
+      <div className="contact-rev" aria-hidden="true">
         REV
       </div>
 
       <div
-        className="contact-orbit contact-orbit-a"
+        className="contact-orbit contact-orbit-one"
         aria-hidden="true"
       />
 
       <div
-        className="contact-orbit contact-orbit-b"
+        className="contact-orbit contact-orbit-two"
         aria-hidden="true"
       />
 
       <div className="contact-container">
-        {/* HEADER */}
+        {/* TOP LABEL */}
 
-        <div className="contact-label">
-          <span className="contact-label-dot" />
-          CONTACT / BOOKING
+        <div className="contact-eyebrow">
+          <div className="contact-eyebrow-left">
+            <span className="contact-dot" />
+            CONTACT / BOOKING
+          </div>
+
+          <span className="contact-eyebrow-number">08</span>
         </div>
 
-        <div className="contact-main">
-          <div className="contact-copy">
+        {/* HERO AREA */}
+
+        <div className="contact-hero">
+          <div className="contact-heading">
             <p className="contact-kicker">
-              READY WHEN YOU ARE
+              YOUR NEXT STEP STARTS HERE
             </p>
 
             <h2>
-              Ready to start
+              LET&apos;S
               <br />
-              your <strong>recovery?</strong>
+              <span>START.</span>
             </h2>
 
-            <p className="contact-lead">
-              Whether you're dealing with pain,
+            <p className="contact-description">
+              Whether you&apos;re dealing with pain,
               recovering from an injury, returning from
               surgery, or simply want to move and perform
-              better — let's build your next step
+              better — let&apos;s build your next step
               together.
             </p>
           </div>
 
-          {/* BOOKING PANEL */}
+          {/* BOOKING CARD */}
 
-          <div className="contact-action">
-            <span className="contact-action-label">
-              START HERE
-            </span>
+          <div className="contact-booking-card">
+            <div className="booking-card-top">
+              <span>BOOK A SESSION</span>
 
-            <p>
-              Your recovery starts with understanding
-              where you are and where you want to go.
-            </p>
+              <div className="booking-status">
+                <i />
+                GET IN TOUCH
+              </div>
+            </div>
+
+            <div className="booking-card-middle">
+              <p>
+                Start with a conversation.
+              </p>
+
+              <h3>
+                Tell me where
+                <br />
+                you want to go.
+              </h3>
+            </div>
 
             <a
-              className="contact-book"
               href={bookingLink}
               target="_blank"
               rel="noreferrer"
+              className="booking-main-button"
               aria-label="Book your physiotherapy session on WhatsApp"
             >
-              <span>BOOK YOUR SESSION</span>
-              <b>→</b>
+              <span className="booking-button-icon">
+                <WhatsAppIcon />
+              </span>
+
+              <span className="booking-button-copy">
+                <small>BOOK THROUGH WHATSAPP</small>
+                <strong>Book your session</strong>
+              </span>
+
+              <span className="booking-arrow">
+                <ArrowIcon />
+              </span>
             </a>
           </div>
         </div>
 
         {/* CONTACT METHODS */}
 
-        <div className="contact-details">
+        <div className="contact-methods">
+          {/* PHONE */}
+
           <a
-            className="contact-detail"
             href={PHONE_LINK}
+            className="contact-method contact-method-phone"
           >
-            <div className="contact-detail-top">
-              <span>PHONE</span>
-              <i className="contact-icon">
-    <PhoneIcon />
-  </i>
+            <div className="contact-method-icon phone-icon">
+              <PhoneIcon />
             </div>
 
-            <div className="contact-detail-bottom">
-              <small>CALL DIRECTLY</small>
+            <div className="contact-method-copy">
+              <span>PHONE</span>
+
               <strong>{PHONE_DISPLAY}</strong>
+
+              <small>Tap to call directly</small>
+            </div>
+
+            <div className="contact-method-arrow">
+              <ArrowIcon />
             </div>
           </a>
 
+          {/* WHATSAPP */}
+
           <a
-            className="contact-detail"
             href={WHATSAPP}
             target="_blank"
             rel="noreferrer"
+            className="contact-method contact-method-whatsapp"
           >
-            <div className="contact-detail-top">
-              <span>WHATSAPP</span>
-              <i className="contact-icon">
-    <WhatsAppIcon />
-  </i>
+            <div className="contact-method-icon whatsapp-icon">
+              <WhatsAppIcon />
             </div>
 
-            <div className="contact-detail-bottom">
-              <small>MESSAGE  Dr 
-              ALI</small>
-              <strong>Start a conversation</strong>
+            <div className="contact-method-copy">
+              <span>WHATSAPP</span>
+
+              <strong>Message Ali</strong>
+
+              <small>Start a conversation</small>
+            </div>
+
+            <div className="contact-method-arrow">
+              <ArrowIcon />
             </div>
           </a>
 
+          {/* INSTAGRAM */}
+
           <a
-            className="contact-detail"
             href={INSTAGRAM}
             target="_blank"
             rel="noreferrer"
+            className="contact-method contact-method-instagram"
           >
-            <div className="contact-detail-top">
-              <span>INSTAGRAM</span>
-                <i className="contact-icon">
-    <InstagramIcon />
-  </i>
+            <div className="contact-method-icon instagram-icon">
+              <InstagramIcon />
             </div>
 
-            <div className="contact-detail-bottom">
-              <small>FOLLOW REV PHYSIO</small>
+            <div className="contact-method-copy">
+              <span>INSTAGRAM</span>
+
               <strong>@therevphysio</strong>
+
+              <small>Follow Rev Physio</small>
+            </div>
+
+            <div className="contact-method-arrow">
+              <ArrowIcon />
             </div>
           </a>
         </div>
 
-        {/* CLOSING */}
+        {/* BOTTOM */}
 
-        <div className="contact-closing">
-          <div className="contact-closing-line" />
+        <div className="contact-bottom">
+          <div className="contact-bottom-line" />
 
-          <div className="contact-signature">
+          <div className="contact-philosophy">
             <span>RECOVER.</span>
             <span>REBUILD.</span>
             <strong>REVOLUTIONIZE.</strong>
           </div>
 
-          <div className="contact-closing-line" />
+          <div className="contact-bottom-line" />
         </div>
       </div>
     </section>

@@ -6,36 +6,51 @@
   position: relative;
   overflow: hidden;
 
-  padding: 115px 7% 65px;
+  padding: 120px 7% 65px;
 
-  background: #0b4054;
+  background:
+    radial-gradient(
+      circle at 90% 12%,
+      rgba(18, 150, 210, 0.14),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 4% 88%,
+      rgba(143, 196, 57, 0.08),
+      transparent 26%
+    ),
+    #0b4054;
+
   color: #ffffff;
 }
 
 .contact-container {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 
   width: 100%;
-  max-width: 1450px;
+  max-width: 1500px;
 
   margin: 0 auto;
 }
 
+
 /* ==========================================
-   BACKGROUND
+   BACKGROUND REV
 ========================================== */
 
 .contact-rev {
   position: absolute;
+  z-index: 0;
 
-  right: -3vw;
-  top: 30px;
+  right: -4vw;
+  top: 25px;
 
-  color: rgba(255, 255, 255, 0.018);
+  color: rgba(255, 255, 255, 0.025);
 
   font-size: clamp(210px, 31vw, 480px);
   font-weight: 900;
+
   line-height: 0.75;
   letter-spacing: -0.09em;
 
@@ -43,64 +58,85 @@
   user-select: none;
 }
 
+
+/* ==========================================
+   ORBITS
+========================================== */
+
 .contact-orbit {
   position: absolute;
+  z-index: 0;
 
   border-radius: 50%;
 
   pointer-events: none;
 }
 
-.contact-orbit-a {
+.contact-orbit-one {
   width: 540px;
   height: 540px;
 
   right: -280px;
-  top: -250px;
+  top: -260px;
 
   border:
-    1px solid rgba(143, 196, 57, 0.1);
+    1px solid rgba(143, 196, 57, 0.11);
 }
 
-.contact-orbit-b {
-  width: 350px;
-  height: 350px;
+.contact-orbit-two {
+  width: 340px;
+  height: 340px;
 
-  right: -120px;
-  top: -100px;
+  right: -110px;
+  top: -110px;
 
   border:
-    1px solid rgba(18, 150, 210, 0.1);
+    1px solid rgba(18, 150, 210, 0.12);
 }
+
 
 /* ==========================================
-   LABEL
+   TOP EYEBROW
 ========================================== */
 
-.contact-label {
+.contact-eyebrow {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
-  gap: 12px;
+  gap: 30px;
 
-  margin-bottom: 55px;
+  margin-bottom: 75px;
 
-  color: #8fc439;
+  padding-bottom: 18px;
 
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 3px;
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.1);
 
   opacity: 0;
 
-  transform: translateY(25px);
+  transform: translateY(20px);
 
   transition:
     opacity 0.7s ease,
     transform 0.7s ease;
 }
 
-.contact-label-dot {
+.contact-eyebrow-left {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 3px;
+}
+
+.contact-dot {
   width: 8px;
   height: 8px;
 
@@ -108,32 +144,46 @@
 
   border-radius: 50%;
 
-  background: #1296d2;
+  background: #8fc439;
+
+  box-shadow:
+    0 0 0 5px rgba(143, 196, 57, 0.09);
 }
 
+.contact-eyebrow-number {
+  color: rgba(255, 255, 255, 0.25);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
 /* ==========================================
-   MAIN
+   HERO
 ========================================== */
 
-.contact-main {
+.contact-hero {
   display: grid;
 
   grid-template-columns:
     minmax(0, 1.2fr)
-    minmax(300px, 0.55fr);
-
-  gap: clamp(55px, 8vw, 120px);
+    minmax(330px, 0.62fr);
 
   align-items: end;
 
-  padding-bottom: 75px;
+  gap: clamp(60px, 9vw, 145px);
+
+  padding-bottom: 90px;
 }
 
+
 /* ==========================================
-   COPY
+   HEADING
 ========================================== */
 
-.contact-copy {
+.contact-heading {
   min-width: 0;
 
   opacity: 0;
@@ -148,65 +198,82 @@
 }
 
 .contact-kicker {
-  margin: 0 0 18px;
+  margin: 0 0 23px;
 
   color: #1296d2;
 
   font-size: 8px;
   font-weight: 800;
+
   letter-spacing: 3px;
 }
 
-.contact-copy h2 {
-  max-width: 900px;
-
+.contact-heading h2 {
   margin: 0;
 
   color: #ffffff;
 
-  font-size: clamp(53px, 6.5vw, 94px);
-  font-weight: 700;
-  line-height: 0.88;
+  font-size: clamp(75px, 9vw, 145px);
+  font-weight: 750;
 
-  letter-spacing: -0.06em;
+  line-height: 0.74;
+  letter-spacing: -0.075em;
 }
 
-.contact-copy h2 strong {
+.contact-heading h2 span {
+  display: inline-block;
+
   color: #8fc439;
-  font-weight: inherit;
 }
 
-.contact-lead {
-  max-width: 600px;
+.contact-description {
+  max-width: 580px;
 
-  margin: 32px 0 0;
+  margin: 45px 0 0;
 
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.58);
 
   font-size: 14px;
+
   line-height: 1.8;
 }
 
+
 /* ==========================================
-   ACTION PANEL
+   BOOKING CARD
 ========================================== */
 
-.contact-action {
+.contact-booking-card {
   position: relative;
-
-  padding: 30px;
 
   overflow: hidden;
 
-  border:
-    1px solid rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
 
-  border-radius: 25px;
+  min-height: 430px;
+
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.11);
+
+  border-radius: 28px;
 
   background:
-    rgba(255, 255, 255, 0.045);
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.025)
+    );
 
-  backdrop-filter: blur(10px);
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.12);
+
+  backdrop-filter: blur(12px);
 
   opacity: 0;
 
@@ -219,93 +286,233 @@
       0.16s;
 }
 
-.contact-action::before {
+.contact-booking-card::before {
   content: "";
 
   position: absolute;
 
-  width: 170px;
-  height: 170px;
+  width: 260px;
+  height: 260px;
 
-  right: -90px;
-  top: -90px;
+  top: -150px;
+  right: -120px;
 
   border-radius: 50%;
 
   background:
-    rgba(143, 196, 57, 0.08);
+    rgba(143, 196, 57, 0.09);
 
   pointer-events: none;
 }
 
-.contact-action-label {
-  position: relative;
-  z-index: 2;
+.contact-booking-card::after {
+  content: "";
 
-  display: block;
+  position: absolute;
 
-  margin-bottom: 65px;
+  width: 160px;
+  height: 160px;
 
-  color: #8fc439;
+  bottom: -100px;
+  left: -90px;
 
-  font-size: 8px;
-  font-weight: 800;
-  letter-spacing: 2.5px;
+  border-radius: 50%;
+
+  background:
+    rgba(18, 150, 210, 0.08);
+
+  pointer-events: none;
 }
 
-.contact-action p {
-  position: relative;
-  z-index: 2;
-
-  max-width: 330px;
-
-  margin: 0 0 25px;
-
-  color: rgba(255, 255, 255, 0.55);
-
-  font-size: 13px;
-  line-height: 1.7;
-}
 
 /* ==========================================
-   BOOK BUTTON
+   BOOKING TOP
 ========================================== */
 
-.contact-book {
+.booking-card-top {
   position: relative;
   z-index: 2;
-
-  width: 100%;
-
-  box-sizing: border-box;
-
-  padding: 7px 7px 7px 21px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   gap: 20px;
+}
+
+.booking-card-top > span {
+  color: #8fc439;
+
+  font-size: 8px;
+  font-weight: 850;
+
+  letter-spacing: 2.5px;
+}
+
+.booking-status {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 7px;
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+}
+
+.booking-status i {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #8fc439;
+
+  box-shadow:
+    0 0 0 4px rgba(143, 196, 57, 0.08);
+}
+
+
+/* ==========================================
+   BOOKING MIDDLE
+========================================== */
+
+.booking-card-middle {
+  position: relative;
+  z-index: 2;
+}
+
+.booking-card-middle p {
+  margin: 0 0 10px;
+
+  color: rgba(255, 255, 255, 0.42);
+
+  font-size: 11px;
+}
+
+.booking-card-middle h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(31px, 3vw, 44px);
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing: -0.045em;
+}
+
+
+/* ==========================================
+   MAIN BOOKING BUTTON
+========================================== */
+
+.booking-main-button {
+  position: relative;
+  z-index: 2;
+
+  box-sizing: border-box;
+
+  width: 100%;
+
+  padding: 9px 9px 9px 11px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
 
   border-radius: 100px;
 
   background: #8fc439;
+
   color: #0b4054;
 
   text-decoration: none;
 
-  font-size: 9px;
-  font-weight: 850;
-  letter-spacing: 1.4px;
-
   transition:
     transform 0.3s ease,
-    background 0.3s ease;
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.contact-book b {
-  width: 44px;
-  height: 44px;
+.booking-main-button:hover {
+  transform: translateY(-3px);
+
+  background: #ffffff;
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ==========================================
+   WHATSAPP ICON IN BUTTON
+========================================== */
+
+.booking-button-icon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #0b4054;
+}
+
+.booking-button-icon .contact-brand-svg {
+  width: 30px;
+  height: 30px;
+}
+
+
+/* ==========================================
+   BOOKING BUTTON COPY
+========================================== */
+
+.booking-button-copy {
+  min-width: 0;
+
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.booking-button-copy small {
+  color: rgba(11, 64, 84, 0.58);
+
+  font-size: 6px;
+  font-weight: 850;
+
+  letter-spacing: 1.3px;
+}
+
+.booking-button-copy strong {
+  color: #0b4054;
+
+  font-size: 13px;
+  font-weight: 750;
+
+  letter-spacing: -0.015em;
+}
+
+
+/* ==========================================
+   ARROW
+========================================== */
+
+.booking-arrow {
+  width: 43px;
+  height: 43px;
 
   flex-shrink: 0;
 
@@ -315,42 +522,47 @@
 
   border-radius: 50%;
 
-  background: #ffffff;
-  color: #0b4054;
+  background: #0b4054;
 
-  font-size: 17px;
-  font-weight: 400;
+  color: #ffffff;
 
   transition:
-    transform 0.35s ease,
-    background 0.3s ease,
-    color 0.3s ease;
+    transform 0.35s ease;
 }
 
-.contact-book:hover {
-  transform: translateY(-2px);
+.booking-arrow svg {
+  width: 17px;
+  height: 17px;
 
-  background: #ffffff;
+  fill: none;
+
+  stroke: currentColor;
+  stroke-width: 1.7;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.contact-book:hover b {
-  transform: rotate(-45deg);
-
-  background: #0b4054;
-  color: #ffffff;
+.booking-main-button:hover .booking-arrow {
+  transform: rotate(45deg);
 }
+
 
 /* ==========================================
-   CONTACT DETAILS
+   CONTACT METHODS
 ========================================== */
 
-.contact-details {
+.contact-methods {
   display: grid;
 
   grid-template-columns:
     repeat(3, minmax(0, 1fr));
 
-  gap: 12px;
+  border-top:
+    1px solid rgba(255, 255, 255, 0.1);
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.1);
 
   opacity: 0;
 
@@ -361,65 +573,53 @@
     transform 0.8s ease 0.24s;
 }
 
-.contact-detail {
-  min-height: 170px;
 
-  box-sizing: border-box;
+/* ==========================================
+   METHOD
+========================================== */
 
-  padding: 23px;
+.contact-method {
+  position: relative;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  min-width: 0;
 
-  border:
-    1px solid rgba(255, 255, 255, 0.09);
+  padding: 35px 30px;
 
-  border-radius: 20px;
+  display: grid;
 
-  background:
-    rgba(255, 255, 255, 0.025);
+  grid-template-columns:
+    auto minmax(0, 1fr) auto;
+
+  align-items: center;
+
+  gap: 20px;
 
   color: #ffffff;
 
   text-decoration: none;
 
   transition:
-    transform 0.35s
-      cubic-bezier(0.22, 1, 0.36, 1),
-    background 0.3s ease,
-    border-color 0.3s ease;
+    background 0.35s ease;
 }
 
-.contact-detail:hover {
-  transform: translateY(-5px);
+.contact-method:not(:last-child) {
+  border-right:
+    1px solid rgba(255, 255, 255, 0.1);
+}
 
-  border-color:
-    rgba(143, 196, 57, 0.35);
-
+.contact-method:hover {
   background:
-    rgba(255, 255, 255, 0.055);
+    rgba(255, 255, 255, 0.045);
 }
 
-.contact-detail-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 
-  gap: 20px;
-}
+/* ==========================================
+   REAL / CLEAN ICON PRESENTATION
+========================================== */
 
-.contact-detail-top span {
-  color: #1296d2;
-
-  font-size: 8px;
-  font-weight: 800;
-  letter-spacing: 2.5px;
-}
-
-.contact-detail-top i {
-  width: 32px;
-  height: 32px;
+.contact-method-icon {
+  width: 58px;
+  height: 58px;
 
   display: flex;
   align-items: center;
@@ -427,58 +627,174 @@
 
   flex-shrink: 0;
 
-  border-radius: 50%;
+  /* NO CIRCLE */
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
 
-  background:
-    rgba(255, 255, 255, 0.05);
 
+/* Base icon */
+
+.contact-brand-svg {
+  display: block;
+
+  width: 34px;
+  height: 34px;
+}
+
+
+/* Phone */
+
+.phone-icon {
+  color: #1296d2;
+}
+
+.phone-svg {
+  fill: none;
+
+  stroke: currentColor;
+  stroke-width: 1.65;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+/* WhatsApp */
+
+.whatsapp-icon {
   color: #8fc439;
-
-  font-size: 12px;
-  font-style: normal;
-
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease;
 }
 
-.contact-detail:hover
-.contact-detail-top i {
-  transform: rotate(45deg);
-
-  background: #8fc439;
-  color: #0b4054;
+.whatsapp-svg {
+  fill: currentColor;
 }
 
-.contact-detail-bottom {
+
+/* Instagram */
+
+.instagram-icon {
+  color: #ffffff;
+}
+
+.instagram-svg {
+  fill: currentColor;
+}
+
+
+/* ==========================================
+   METHOD COPY
+========================================== */
+
+.contact-method-copy {
+  min-width: 0;
+
   display: flex;
   flex-direction: column;
 
-  gap: 7px;
+  gap: 5px;
 }
 
-.contact-detail-bottom small {
-  color: rgba(255, 255, 255, 0.3);
+.contact-method-copy > span {
+  margin-bottom: 5px;
+
+  color: #1296d2;
 
   font-size: 7px;
-  font-weight: 800;
-  letter-spacing: 1.7px;
+  font-weight: 850;
+
+  letter-spacing: 2.2px;
 }
 
-.contact-detail-bottom strong {
+.contact-method-whatsapp
+.contact-method-copy > span {
+  color: #8fc439;
+}
+
+.contact-method-copy strong {
+  overflow-wrap: anywhere;
+
   color: #ffffff;
 
-  font-size: clamp(14px, 1.3vw, 18px);
+  font-size: clamp(15px, 1.35vw, 19px);
   font-weight: 600;
 
-  letter-spacing: -0.02em;
+  line-height: 1.2;
+
+  letter-spacing: -0.025em;
 }
 
+.contact-method-copy small {
+  color: rgba(255, 255, 255, 0.36);
+
+  font-size: 9px;
+}
+
+
 /* ==========================================
-   CLOSING
+   METHOD ARROW
 ========================================== */
 
-.contact-closing {
+.contact-method-arrow {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: rgba(255, 255, 255, 0.35);
+
+  transition:
+    color 0.3s ease,
+    transform 0.35s ease;
+}
+
+.contact-method-arrow svg {
+  width: 18px;
+  height: 18px;
+
+  fill: none;
+
+  stroke: currentColor;
+  stroke-width: 1.5;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-method:hover
+.contact-method-arrow {
+  color: #8fc439;
+
+  transform: rotate(45deg);
+}
+
+
+/* ==========================================
+   ICON HOVER
+========================================== */
+
+.contact-method-icon
+.contact-brand-svg {
+  transition:
+    transform 0.4s
+      cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.contact-method:hover
+.contact-method-icon
+.contact-brand-svg {
+  transform: scale(1.12);
+}
+
+
+/* ==========================================
+   BOTTOM PHILOSOPHY
+========================================== */
+
+.contact-bottom {
   margin-top: 55px;
 
   display: flex;
@@ -495,15 +811,16 @@
     transform 0.7s ease 0.32s;
 }
 
-.contact-closing-line {
+.contact-bottom-line {
   height: 1px;
+
   flex: 1;
 
   background:
     rgba(255, 255, 255, 0.08);
 }
 
-.contact-signature {
+.contact-philosophy {
   display: flex;
   align-items: center;
 
@@ -511,63 +828,95 @@
 
   flex-shrink: 0;
 
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.34);
 
   font-size: 8px;
   font-weight: 800;
-  letter-spacing: 2.5px;
+
+  letter-spacing: 2.4px;
 }
 
-.contact-signature strong {
+.contact-philosophy strong {
   color: #8fc439;
 }
 
+
 /* ==========================================
-   VISIBLE
+   ENTRANCE ANIMATION
 ========================================== */
 
-.contact-visible .contact-label,
-.contact-visible .contact-copy,
-.contact-visible .contact-action,
-.contact-visible .contact-details,
-.contact-visible .contact-closing {
+.contact-visible
+.contact-eyebrow,
+
+.contact-visible
+.contact-heading,
+
+.contact-visible
+.contact-booking-card,
+
+.contact-visible
+.contact-methods,
+
+.contact-visible
+.contact-bottom {
   opacity: 1;
+
   transform: translateY(0);
 }
+
 
 /* ==========================================
    TABLET
 ========================================== */
 
-@media (max-width: 950px) {
+@media (max-width: 1000px) {
   .contact {
-    padding: 105px 5% 65px;
+    padding:
+      105px 5%
+      60px;
   }
 
-  .contact-main {
+  .contact-eyebrow {
+    margin-bottom: 55px;
+  }
+
+  .contact-hero {
     grid-template-columns: 1fr;
 
-    gap: 45px;
+    gap: 55px;
 
-    padding-bottom: 60px;
+    padding-bottom: 70px;
   }
 
-  .contact-action {
-    max-width: 500px;
+  .contact-heading h2 {
+    font-size:
+      clamp(75px, 14vw, 120px);
   }
 
-  .contact-action-label {
-    margin-bottom: 45px;
+  .contact-booking-card {
+    width: 100%;
+    max-width: 600px;
+
+    min-height: 380px;
   }
 
-  .contact-details {
+  .contact-methods {
     grid-template-columns: 1fr;
   }
 
-  .contact-detail {
-    min-height: 145px;
+  .contact-method {
+    padding: 28px 10px;
+  }
+
+  .contact-method:not(:last-child) {
+    border-right: none;
+
+    border-bottom:
+      1px solid
+      rgba(255, 255, 255, 0.1);
   }
 }
+
 
 /* ==========================================
    MOBILE
@@ -575,57 +924,195 @@
 
 @media (max-width: 600px) {
   .contact {
-    padding: 90px 20px 50px;
+    padding:
+      90px 20px
+      50px;
   }
 
-  .contact-label {
-    margin-bottom: 42px;
+  .contact-rev {
+    top: 120px;
+
+    right: -60px;
+
+    font-size: 190px;
   }
 
-  .contact-copy h2 {
+  .contact-orbit-one {
+    width: 330px;
+    height: 330px;
+
+    right: -220px;
+  }
+
+  .contact-orbit-two {
+    width: 210px;
+    height: 210px;
+
+    right: -130px;
+  }
+
+
+  /* TOP */
+
+  .contact-eyebrow {
+    margin-bottom: 48px;
+
+    padding-bottom: 15px;
+  }
+
+  .contact-eyebrow-left {
+    font-size: 7px;
+
+    letter-spacing: 2.3px;
+  }
+
+
+  /* HERO */
+
+  .contact-hero {
+    gap: 43px;
+
+    padding-bottom: 58px;
+  }
+
+  .contact-kicker {
+    margin-bottom: 18px;
+
+    font-size: 7px;
+  }
+
+  .contact-heading h2 {
     font-size:
-      clamp(47px, 14vw, 65px);
+      clamp(68px, 21vw, 92px);
+
+    line-height: 0.76;
   }
 
-  .contact-lead {
-    margin-top: 27px;
+  .contact-description {
+    margin-top: 35px;
 
     font-size: 13px;
+
+    line-height: 1.75;
   }
 
-  .contact-main {
-    gap: 38px;
 
-    padding-bottom: 50px;
+  /* BOOKING */
+
+  .contact-booking-card {
+    min-height: 355px;
+
+    padding: 23px;
+
+    border-radius: 23px;
   }
 
-  .contact-action {
-    padding: 24px;
-
-    border-radius: 21px;
+  .booking-card-top {
+    gap: 10px;
   }
 
-  .contact-action-label {
-    margin-bottom: 40px;
+  .booking-card-top > span {
+    font-size: 7px;
   }
 
-  .contact-detail {
-    min-height: 135px;
-
-    padding: 20px;
+  .booking-status {
+    font-size: 6px;
   }
 
-  .contact-closing {
-    margin-top: 45px;
+  .booking-card-middle h3 {
+    font-size: 34px;
+  }
+
+
+  /* BUTTON */
+
+  .booking-main-button {
+    padding:
+      7px 7px
+      7px 8px;
+
+    gap: 8px;
+  }
+
+  .booking-button-icon {
+    width: 43px;
+    height: 43px;
+  }
+
+  .booking-button-icon
+  .contact-brand-svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  .booking-button-copy small {
+    font-size: 5.5px;
+
+    letter-spacing: 0.9px;
+  }
+
+  .booking-button-copy strong {
+    font-size: 12px;
+  }
+
+  .booking-arrow {
+    width: 39px;
+    height: 39px;
+  }
+
+
+  /* CONTACT METHODS */
+
+  .contact-method {
+    grid-template-columns:
+      48px
+      minmax(0, 1fr)
+      32px;
 
     gap: 15px;
+
+    padding: 25px 4px;
   }
 
-  .contact-closing-line {
+  .contact-method-icon {
+    width: 48px;
+    height: 48px;
+
+    justify-content: flex-start;
+  }
+
+  .contact-brand-svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .contact-method-copy strong {
+    font-size: 16px;
+  }
+
+  .contact-method-copy small {
+    font-size: 8px;
+  }
+
+  .contact-method-arrow {
+    width: 32px;
+    height: 32px;
+  }
+
+
+  /* BOTTOM */
+
+  .contact-bottom {
+    margin-top: 43px;
+
+    gap: 0;
+  }
+
+  .contact-bottom-line {
     display: none;
   }
 
-  .contact-signature {
+  .contact-philosophy {
     width: 100%;
 
     flex-direction: column;
@@ -637,46 +1124,71 @@
   }
 }
 
+
+/* ==========================================
+   VERY SMALL MOBILE
+========================================== */
+
+@media (max-width: 390px) {
+  .contact-heading h2 {
+    font-size:
+      clamp(62px, 20vw, 78px);
+  }
+
+  .contact-booking-card {
+    padding: 20px;
+  }
+
+  .booking-card-middle h3 {
+    font-size: 31px;
+  }
+
+  .booking-button-copy small {
+    display: none;
+  }
+
+  .contact-method {
+    grid-template-columns:
+      43px
+      minmax(0, 1fr)
+      28px;
+
+    gap: 11px;
+  }
+
+  .contact-method-icon {
+    width: 43px;
+  }
+
+  .contact-brand-svg {
+    width: 27px;
+    height: 27px;
+  }
+}
+
+
 /* ==========================================
    REDUCED MOTION
 ========================================== */
 
 @media (prefers-reduced-motion: reduce) {
-  .contact-label,
-  .contact-copy,
-  .contact-action,
-  .contact-details,
-  .contact-closing {
+  .contact-eyebrow,
+  .contact-heading,
+  .contact-booking-card,
+  .contact-methods,
+  .contact-bottom {
     opacity: 1;
+
     transform: none;
+
     transition: none;
   }
 
-  .contact-detail,
-  .contact-detail-top i,
-  .contact-book,
-  .contact-book b {
+  .contact-method,
+  .contact-brand-svg,
+  .contact-method-arrow,
+  .booking-main-button,
+  .booking-arrow {
     transition: none;
   }
-  .contact-icon svg {
-  width: 15px;
-  height: 15px;
-
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.contact-icon .icon-fill {
-  fill: currentColor;
-  stroke: none;
-}
-
-/* WhatsApp icon needs to be filled */
-.contact-detail:nth-child(2) .contact-icon svg {
-  fill: currentColor;
-  stroke: none;
-}
 }
